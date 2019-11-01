@@ -1,0 +1,41 @@
+@import "../../../scss/variables";
+
+.title-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 4rem;
+    color: black;
+    text-shadow: 2px 2px 2px $yellow;
+  }
+
+  nav {
+    border: solid 10px black;
+    background-color: black;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      padding: 0;
+
+      li a {
+        padding: 1em;
+
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: white;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          background: darken(black, 10%);
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
