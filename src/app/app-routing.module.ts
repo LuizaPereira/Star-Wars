@@ -7,6 +7,7 @@ import { PlanetsListComponent } from './components/planets-list/planets-list.com
 import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { SpaceshipsListComponent } from './components/spaceships-list/spaceships-list.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'Planets', component: PlanetsListComponent },
   { path: 'Vehicles', component: VehiclesListComponent },
   { path: 'Species', component: SpeciesListComponent },
-  { path: 'Spaceships', component: SpaceshipsListComponent }
+  { path: 'Spaceships', component: SpaceshipsListComponent },
+  { path: 'About', component: AboutComponent}
 ];
 
 @NgModule({

@@ -7,14 +7,17 @@
   align-items: center;
 
   h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     color: black;
     text-shadow: 2px 2px 2px $yellow;
   }
 
   nav {
+    margin-top: 10px;
     border: solid 10px black;
     background-color: black;
+    border-radius: 10px;
+
 
     ul {
       list-style-type: none;

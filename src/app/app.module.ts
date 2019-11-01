@@ -11,6 +11,7 @@ import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { SpaceshipsListComponent } from './components/spaceships-list/spaceships-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HomeComponent } from './components/home/home.component';
     VehiclesListComponent,
     SpeciesListComponent,
     SpaceshipsListComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
