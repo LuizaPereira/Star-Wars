@@ -4,7 +4,7 @@
 
 * {
   margin: 0px;
-  padding: 0px
+  padding: 0px;
 }
 
 body {
@@ -24,8 +24,12 @@ body {
     padding: 10px;
     border-radius: 10px;
 
-    p {
-      color: white;
+    li {
+      list-style-type: none;
+
+      p {
+        color: white;
+      }
     }
   }
 }
