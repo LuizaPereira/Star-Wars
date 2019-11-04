@@ -23,15 +23,14 @@ body {
     background: black;
     padding: 10px;
     border-radius: 10px;
-    
-    p {
-      color: white;
+    color: white;
+
+    a {
+      text-decoration: none;
     }
 
-    li {
+    ul {
       list-style-type: none;
-
-     
     }
   }
 }

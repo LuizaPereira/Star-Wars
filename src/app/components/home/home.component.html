@@ -1,8 +1,7 @@
 <div class='container'>
   <ul>
-    <li *ngFor="let movie of movies.results">
-      <p>{{ movie.title }}</p>
-      <!-- <p class="country">{{ movie.title }}</p> -->
+    <li *ngFor="let movie of movies">
+      <a href="" >Episode {{movie.episode_id}} : {{ movie.title }}</a>
     </li>
   </ul>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
+import { Movies } from 'src/app/models/movies.model';
 
 
 @Component({
@@ -9,15 +10,26 @@ import { HttpService } from '../../services/http.service';
 })
 export class HomeComponent implements OnInit {
 
-  movies: Object;
+  movies: Movies[];
 
   constructor(private _http: HttpService) { }
 
   ngOnInit() {
-    this._http.getMovies().subscribe(data => {
-      this.movies = data;
-      console.log(this.movies);
+    this._http.getMovies().subscribe(
+      (data: Movies) => {
+        this.movies = data.results
+        console.log(this.movies);
+      }
+    )
+  }
+
+  getCharacters() {
+    //console.log(this.movies);
+    this.movies.map(({ characters }) => {
+
+      //this._http.getCharacters(characterUrl).subscribe(char => this.char.push(char)));
+      console.log(characters);
     }
-    );
+    )
   }
 }
