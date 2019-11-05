@@ -11,4 +11,7 @@ export interface Movie {
   starships: [];
   vehicles: [];
   species: [];
+  created: string;
+  edited: string;
+  url: string;
 }
