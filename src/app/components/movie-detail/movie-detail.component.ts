@@ -14,7 +14,7 @@ import { CharactersService } from 'src/app/services/characters.service';
 export class MovieDetailComponent implements OnInit {
   movie: Movie;
   charactersUrl: [];
-  characters: Character[];
+  characters: Character[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -42,13 +42,14 @@ export class MovieDetailComponent implements OnInit {
     this.charactersUrl = this.movie.characters;
     this.charactersUrl.map(data => {
       this.charactersUrl = data;
-
-      this._characters.getCharactersMovie(data).subscribe(
-        (char: Character[]) => {
-          this.characters = char;
-          console.log(char);
+      this._characters.getCharactersByUrl(data).subscribe(
+        (char: Character) => {
+          this.characters.push(char)
         });
     });
+
+    console.log(this.characters);
+
   }
 
   goBack(): void {

@@ -12,7 +12,7 @@ export class CharactersService {
     return this.http.get('https://swapi.co/api/people/?format=json');
   }
 
-  getCharactersMovie(url) {
+  getCharactersByUrl(url) {
     return this.http.get(url);
   }
 }
