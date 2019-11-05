@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Location } from '@angular/common';
-import { Movies } from 'src/app/models/movies.model';
+import { Movie } from 'src/app/models/movies.model';
+import { Character } from 'src/app/models/character.model';
+import { CharactersService } from 'src/app/services/characters.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -10,11 +12,14 @@ import { Movies } from 'src/app/models/movies.model';
   styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
-  movie: Movies;
+  movie: Movie;
+  charactersUrl: [];
+  characters: Character[];
 
   constructor(
     private route: ActivatedRoute,
-    private _http: MoviesService,
+    private _movies: MoviesService,
+    private _characters: CharactersService,
     private location: Location) {
   }
 
@@ -24,12 +29,26 @@ export class MovieDetailComponent implements OnInit {
 
   getMovie(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this._http.getMovies().subscribe(
-      (data: Movies) => {
+    this._movies.getMovies().subscribe(
+      (data: Movie) => {
         this.movie = data.results[id];
         console.log(this.movie);
+        this.getCharacters();
       }
     )
+  }
+
+  getCharacters(): void {
+    this.charactersUrl = this.movie.characters;
+    this.charactersUrl.map(data => {
+      this.charactersUrl = data;
+
+      this._characters.getCharactersMovie(data).subscribe(
+        (char: Character[]) => {
+          this.characters = char;
+          console.log(char);
+        });
+    });
   }
 
   goBack(): void {

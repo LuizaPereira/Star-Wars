@@ -1,4 +1,4 @@
-export interface Movies {
+export interface Movie {
   results?: any;
   title: string;
   opening_crawl: string;
