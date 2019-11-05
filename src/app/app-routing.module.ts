@@ -11,7 +11,7 @@ import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'Movies', component: MovieDetailComponent },
+  { path: 'Movies/:id', component: MovieDetailComponent },
   { path: 'Characters', component: CharacterListComponent },
   { path: 'Planets', component: PlanetsListComponent },
   { path: 'Vehicles', component: VehiclesListComponent },

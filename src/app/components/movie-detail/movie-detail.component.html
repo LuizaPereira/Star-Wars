@@ -1,3 +1,9 @@
 <div class='container'>
-  <p>movie-detail works!</p>
+  <div *ngIf="movie">
+      <a (click)="goBack()" class="cardinal-button"> GO BACK</a>
+      <h2>Episode {{movie.episode_id}} : {{ movie.title }}</h2>
+      <h4> {{movie.opening_crawl}}</h4>
+
+
+  </div>
 </div>

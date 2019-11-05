@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../services/http.service';
+import { MoviesService } from '../../services/movies.service';
 import { Movies } from 'src/app/models/movies.model';
 
 
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   movies: Movies[];
 
-  constructor(private _http: HttpService) { }
+  constructor(private _http: MoviesService) { }
 
   ngOnInit() {
     this._http.getMovies().subscribe(
