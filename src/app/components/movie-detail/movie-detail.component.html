@@ -7,7 +7,10 @@
         <p>Director : {{movie.director}}</p>
         <p>Producer : {{movie.producer}}</p>
     </div>
-    <p> {{movie.opening_crawl}}</p>
+    <div class="movie-crawl">
+      <span>{{movie.opening_crawl}}</span>
+    </div>
+    
 
     <div *ngIf="characters">
       <h1>Characters</h1>
