@@ -1,7 +1,6 @@
 @import "../../../scss/variables";
 .container {
-
-  h1{
+  h1 {
     color: $yellow;
   }
 
@@ -13,6 +12,24 @@
 
     p {
       margin-top: 20px;
+    }
+
+    .list {
+      a {
+
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: $yellow;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          background: darken(black, 10%);
+          color: $yellow;
+          border-radius: 10px;
+        }
+      }
     }
   }
 }
