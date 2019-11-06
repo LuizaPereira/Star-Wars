@@ -1,0 +1,18 @@
+@import "../../../scss/variables";
+.container {
+
+  h1{
+    color: $yellow;
+  }
+
+  .about-detail {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 0px;
+
+    p {
+      margin-top: 20px;
+    }
+  }
+}

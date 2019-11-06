@@ -17,7 +17,7 @@
     border: solid 10px black;
     background-color: black;
     border-radius: 10px;
-    
+
     ul {
       display: flex;
       padding: 0;
@@ -36,6 +36,7 @@
           text-decoration: underline;
           background: darken(black, 10%);
           color: $yellow;
+          border-radius: 10px;
         }
       }
     }

@@ -112,6 +112,8 @@ export class MovieDetailComponent implements OnInit {
       this._vehicles.getVehicleByUrl(data).subscribe(
         (vehicle: Vehicle) => {
           this.vehicles.push(vehicle)
+
+          console.log(vehicle);
         });
     });
   }
