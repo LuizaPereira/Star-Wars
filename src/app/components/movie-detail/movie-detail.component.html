@@ -1,11 +1,16 @@
 <div class="container">
   <div *ngIf="movie">
     <a (click)="goBack()" class="cardinal-button"> GO BACK</a>
-    <h2>Episode {{movie.episode_id}} : {{ movie.title }}</h2>
-    <h4> {{movie.opening_crawl}}</h4>
+    <h1>Episode {{movie.episode_id}} : {{ movie.title }}</h1>
+    <div class="sub-title">
+        <p>Release Date: {{movie.release_date}}</p>
+        <p>Director : {{movie.director}}</p>
+        <p>Producer : {{movie.producer}}</p>
+    </div>
+    <p> {{movie.opening_crawl}}</p>
 
     <div *ngIf="characters">
-      <h2>Characters</h2>
+      <h1>Characters</h1>
         <ul class="characters-block">
           <li *ngFor="let char of characters">
             <div class="characters-detail">
