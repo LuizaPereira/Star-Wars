@@ -4,15 +4,15 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersService {
+export class PlanetsService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters() {
-    return this.http.get('https://swapi.co/api/people/?format=json');
+  getPlanets() {
+    return this.http.get('https://swapi.co/api/planets/?format=json');
   }
 
-  getCharacterByUrl(url) {
+  getPlanetByUrl(url) {
     return this.http.get(url);
   }
 }

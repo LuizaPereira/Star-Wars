@@ -3,26 +3,85 @@
     <a (click)="goBack()" class="cardinal-button"> GO BACK</a>
     <h1>Episode {{movie.episode_id}} : {{ movie.title }}</h1>
     <div class="sub-title">
-        <p>Release Date: {{movie.release_date}}</p>
-        <p>Director : {{movie.director}}</p>
-        <p>Producer : {{movie.producer}}</p>
+      <p>Release Date: {{movie.release_date}}</p>
+      <p>Director : {{movie.director}}</p>
+      <p>Producer : {{movie.producer}}</p>
     </div>
     <div class="movie-crawl">
       <span>{{movie.opening_crawl}}</span>
     </div>
-    
-    <div *ngIf="characters">
+
+    <div *ngIf="characters" class="characters-block">
       <h1>Characters</h1>
-        <ul class="characters-block">
-          <li *ngFor="let char of characters">
-            <div class="characters-detail">
-              <h2>{{char.name}}</h2>
-              <p>Gender : {{char.gender}}</p>
-              <p>Height : {{char.height}}</p>
-              <p>Hair Color : {{char.hair_color}}</p>
+      <ul class="characters-list">
+        <li *ngFor="let char of characters">
+          <div class="characters-detail">
+            <h2>{{char.name}}</h2>
+            <p>Gender : {{char.gender}}</p>
+            <p>Height : {{char.height}}</p>
+            <p>Hair Color : {{char.hair_color}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="planets" class="planets-block">
+        <h1>Planets</h1>
+        <ul class="planets-list">
+          <li *ngFor="let planet of planets">
+            <div class="planets-detail">
+              <h2>{{planet.name}}</h2>
+              <p>Diameter : {{planet.diameter}}</p>
+              <p>Climate : {{planet.climate}}</p>
+              <p>Population : {{planet.population}}</p>
+              <p>Terrain : {{planet.terrain}}</p>
             </div>
           </li>
         </ul>
-    </div>
+      </div>
+
+      <div *ngIf="species" class="species-block">
+          <h1>Species</h1>
+          <ul class="species-list">
+            <li *ngFor="let specie of species">
+              <div class="species-detail">
+                <h2>{{specie.name}}</h2>
+                <p>Classification : {{specie.classification}}</p>
+                <p>Designation : {{specie.designation}}</p>
+                <p>Language : {{specie.language}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div *ngIf="starships" class="starships-block">
+            <h1>Starships</h1>
+            <ul class="starships-list">
+              <li *ngFor="let starship of starships">
+                <div class="starships-detail">
+                  <h2>{{starship.name}}</h2>
+                  <p>Model : {{starship.model}}</p>
+                  <p>Class : {{starship.starship_class}}</p>
+                  <p>Value : {{starship.cost_in_credits}}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div *ngIf="vehicles" class="vehicles-block">
+              <h1>Vehicles</h1>
+              <ul class="vehicles-list">
+                <li *ngFor="let vehicle of vehicles">
+                  <div class="vehicles-detail">
+                    <h2>{{vehicle.name}}</h2>
+                    <p>Model : {{vehicle.model}}</p>
+                    <p>Class : {{vehicle.vehicle_class}}</p>
+                    <p>Value : {{vehicle.cost_in_credits}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+
   </div>
 </div>

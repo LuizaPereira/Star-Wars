@@ -11,8 +11,4 @@ export class MoviesService {
   getMovies() {
     return this.http.get('https://swapi.co/api/films/?format=json');
   }
-
-  // getCharacters(url) {
-  //   return this.http.get(url);
-  // }
 }

@@ -5,6 +5,14 @@ import { Location } from '@angular/common';
 import { Movie } from 'src/app/models/movies.model';
 import { Character } from 'src/app/models/character.model';
 import { CharactersService } from 'src/app/services/characters.service';
+import { Planet } from 'src/app/models/planets.model';
+import { PlanetsService } from 'src/app/services/planets.service';
+import { SpeciesService } from 'src/app/services/species.service';
+import { StarshipsService } from 'src/app/services/starships.service';
+import { VehiclesService } from 'src/app/services/vehicles.service';
+import { Specie } from 'src/app/models/species.model';
+import { Starship } from 'src/app/models/starships.model';
+import { Vehicle } from 'src/app/models/vehicles.model';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,12 +22,24 @@ import { CharactersService } from 'src/app/services/characters.service';
 export class MovieDetailComponent implements OnInit {
   movie: Movie;
   charactersUrl: [];
+  planetsUrl: [];
+  speciesUrl: [];
+  starshipsUrl: [];
+  vehiclesUrl: [];
   characters: Character[] = [];
+  planets: Planet[] = [];
+  species: Specie[] = [];
+  starships: Starship[] = [];
+  vehicles: Vehicle[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private _movies: MoviesService,
     private _characters: CharactersService,
+    private _planets: PlanetsService,
+    private _species: SpeciesService,
+    private _starships: StarshipsService,
+    private _vehicles: VehiclesService,
     private location: Location) {
   }
 
@@ -32,8 +52,11 @@ export class MovieDetailComponent implements OnInit {
     this._movies.getMovies().subscribe(
       (data: Movie) => {
         this.movie = data.results[id];
-        console.log(this.movie);
         this.getCharacters();
+        this.getPlanets();
+        this.getSpecies();
+        this.getStarships();
+        this.getVehicles();
       }
     )
   }
@@ -42,14 +65,55 @@ export class MovieDetailComponent implements OnInit {
     this.charactersUrl = this.movie.characters;
     this.charactersUrl.map(data => {
       this.charactersUrl = data;
-      this._characters.getCharactersByUrl(data).subscribe(
+      this._characters.getCharacterByUrl(data).subscribe(
         (char: Character) => {
           this.characters.push(char)
         });
     });
+  }
 
-    console.log(this.characters);
+  getPlanets(): void {
+    this.planetsUrl = this.movie.planets;
+    this.planetsUrl.map(data => {
+      this.planetsUrl = data;
+      this._planets.getPlanetByUrl(data).subscribe(
+        (planet: Planet) => {
+          this.planets.push(planet)
+        });
+    });
+  }
 
+  getSpecies(): void {
+    this.speciesUrl = this.movie.species;
+    this.speciesUrl.map(data => {
+      this.speciesUrl = data;
+      this._species.getSpecieByUrl(data).subscribe(
+        (specie: Specie) => {
+          this.species.push(specie)
+        });
+    });
+  }
+
+  getStarships(): void {
+    this.starshipsUrl = this.movie.starships;
+    this.starshipsUrl.map(data => {
+      this.starshipsUrl = data;
+      this._starships.getStarshipByUrl(data).subscribe(
+        (starship: Starship) => {
+          this.starships.push(starship)
+        });
+    });
+  }
+
+  getVehicles(): void {
+    this.vehiclesUrl = this.movie.vehicles;
+    this.vehiclesUrl.map(data => {
+      this.vehiclesUrl = data;
+      this._vehicles.getVehicleByUrl(data).subscribe(
+        (vehicle: Vehicle) => {
+          this.vehicles.push(vehicle)
+        });
+    });
   }
 
   goBack(): void {
