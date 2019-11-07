@@ -14,20 +14,33 @@
     <div *ngIf="characters" class="characters-block">
       <h1>Characters</h1>
       <ul class="characters-list">
-        <li *ngFor="let char of characters">
+        <app-information-box
+          *ngFor="let character of characters"
+          [object]="character"
+          [map-attributes]="['name', 'height']"
+          title-attribute="name"
+        ></app-information-box>
+
+        <!-- <li *ngFor="let char of characters">
           <div class="characters-detail">
             <h2>{{char.name}}</h2>
             <p>Gender : {{char.gender}}</p>
             <p>Height : {{char.height}}</p>
             <p>Hair Color : {{char.hair_color}}</p>
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
 
     <div *ngIf="planets" class="planets-block">
       <h1>Planets</h1>
       <ul class="planets-list">
+        <app-information-box
+          *ngFor="let character of characters"
+          [object]="character"
+          [map-attributes]="['name', 'height']"
+        ></app-information-box>
+
         <li *ngFor="let planet of planets">
           <div class="planets-detail">
             <h2>{{planet.name}}</h2>

@@ -13,6 +13,7 @@ import { SpaceshipsListComponent } from './components/spaceships-list/spaceships
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InformationBoxComponent } from './components/information-box/information-box.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     SpeciesListComponent,
     SpaceshipsListComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    InformationBoxComponent
   ],
   imports: [
     BrowserModule,
