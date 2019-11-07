@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  characters: 'https://swapi.co/api/people/?format=json',
+  movies: 'https://swapi.co/api/films/?format=json',
+  planets: 'https://swapi.co/api/planets/?format=json',
+  species: 'https://swapi.co/api/species/?format=json',
+  starships: 'https://swapi.co/api/starships/?format=json',
+  vehicles: 'https://swapi.co/api/vehicles/?format=json'
 };
 
 /*

@@ -2,7 +2,6 @@
 @import "../../../scss/variables";
 
 .container {
-
   h1 {
     margin: 20px 0px;
     color: $yellow;
@@ -20,10 +19,9 @@
     margin: 20px 0px;
   }
 
-  .characters-block{
-
+  .characters-block {
     .characters-list {
-      @include block-disposal();
+      @include block-disposal(flex, wrap, space-evenly);
 
       .characters-detail {
         @include block-detail(white, black, $yellow);
@@ -31,14 +29,13 @@
     }
   }
 
-  .planets-block{
-
+  .planets-block {
     h1 {
       color: $blue;
     }
 
     .planets-list {
-      @include block-disposal();
+      @include block-disposal(flex, wrap, space-evenly);
 
       .planets-detail {
         @include block-detail(white, black, $blue);
@@ -46,14 +43,13 @@
     }
   }
 
-  .species-block{
-
+  .species-block {
     h1 {
       color: $purple;
     }
 
     .species-list {
-      @include block-disposal();
+      @include block-disposal(flex, wrap, space-evenly);
 
       .species-detail {
         @include block-detail(white, black, $purple);
@@ -61,14 +57,13 @@
     }
   }
 
-  .starships-block{
-
+  .starships-block {
     h1 {
       color: $pink;
     }
 
     .starships-list {
-      @include block-disposal();
+      @include block-disposal(flex, wrap, space-evenly);
 
       .starships-detail {
         @include block-detail(white, black, $pink);
@@ -76,19 +71,17 @@
     }
   }
 
-  .vehicles-block{
-
+  .vehicles-block {
     h1 {
       color: $red;
     }
 
     .vehicles-list {
-      @include block-disposal();
+      @include block-disposal(flex, wrap, space-evenly);
 
       .vehicles-detail {
         @include block-detail(white, black, $red);
       }
     }
   }
-
 }

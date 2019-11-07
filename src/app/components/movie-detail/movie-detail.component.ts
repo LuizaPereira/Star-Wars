@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Location } from '@angular/common';
@@ -13,13 +13,14 @@ import { VehiclesService } from 'src/app/services/vehicles.service';
 import { Specie } from 'src/app/models/species.model';
 import { Starship } from 'src/app/models/starships.model';
 import { Vehicle } from 'src/app/models/vehicles.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss']
 })
-export class MovieDetailComponent implements OnInit {
+export class MovieDetailComponent implements OnInit, OnDestroy {
   movie: Movie;
   charactersUrl: [];
   planetsUrl: [];
@@ -31,6 +32,7 @@ export class MovieDetailComponent implements OnInit {
   species: Specie[] = [];
   starships: Starship[] = [];
   vehicles: Vehicle[] = [];
+  detailSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -49,7 +51,7 @@ export class MovieDetailComponent implements OnInit {
 
   getMovie(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this._movies.getMovies().subscribe(
+    this.detailSubscription = this._movies.getMovies().subscribe(
       (data: Movie) => {
         this.movie = data.results[id];
         this.getCharacters();
@@ -112,13 +114,15 @@ export class MovieDetailComponent implements OnInit {
       this._vehicles.getVehicleByUrl(data).subscribe(
         (vehicle: Vehicle) => {
           this.vehicles.push(vehicle)
-
-          console.log(vehicle);
         });
     });
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  ngOnDestroy() {
+    this.detailSubscription.unsubscribe();
   }
 }

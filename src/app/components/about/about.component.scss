@@ -1,4 +1,5 @@
 @import "../../../scss/variables";
+
 .container {
   h1 {
     color: $yellow;
@@ -16,7 +17,6 @@
 
     .list {
       a {
-
         &:link,
         &:visited {
           text-decoration: none;

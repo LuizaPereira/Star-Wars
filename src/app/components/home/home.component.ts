@@ -1,35 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { Movie } from 'src/app/models/movies.model';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
-  movies: Movie[];
+  public movies: Movie[];
+  movieSubscription: Subscription;
 
   constructor(private _http: MoviesService) { }
 
   ngOnInit() {
-    this._http.getMovies().subscribe(
+    this.movieSubscription = this._http.getMovies().subscribe(
       (data: Movie) => {
-        this.movies = data.results
+        this.movies = data.results;
         console.log(this.movies);
       }
     )
   }
 
-  getCharacters() {
-    //console.log(this.movies);
-    this.movies.map(({ characters }) => {
-
-      //this._http.getCharacters(characterUrl).subscribe(char => this.char.push(char)));
-      console.log(characters);
-    }
-    )
-  }
+  ngOnDestroy() { this.movieSubscription.unsubscribe(); }
 }

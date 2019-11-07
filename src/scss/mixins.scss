@@ -7,8 +7,8 @@
   border-radius: 10px;
 }
 
-@mixin block-disposal() {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+@mixin block-disposal($display, $wrap, $justify-content) {
+  display: $display;
+  flex-wrap: $wrap;
+  justify-content: $justify-content;
 }

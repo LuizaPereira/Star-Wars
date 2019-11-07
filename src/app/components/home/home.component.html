@@ -1,7 +1,7 @@
 <div class="container">
   <ul>
     <li *ngFor="let movie of movies; let i = index;">
-      <a routerLink="/Movies/{{i}}">Episode {{movie.episode_id}} : {{ movie.title }}</a>
+      <a routerLink="/movies/{{i}}">Episode {{movie.episode_id}} : {{ movie.title }}</a>
     </li>
   </ul>
 </div>

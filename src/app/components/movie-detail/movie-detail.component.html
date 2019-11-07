@@ -3,7 +3,7 @@
     <a (click)="goBack()" class="cardinal-button"> GO BACK</a>
     <h1>Episode {{movie.episode_id}} : {{ movie.title }}</h1>
     <div class="sub-title">
-      <p>Release Date: {{movie.release_date}}</p>
+      <p>Release Date: {{movie.release_date | date:'dd/MM/yyyy'}}</p>
       <p>Director : {{movie.director}}</p>
       <p>Producer : {{movie.producer}}</p>
     </div>

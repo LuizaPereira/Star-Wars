@@ -6,15 +6,12 @@ import { Location } from '@angular/common';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
   constructor(private location: Location) { }
-
-  ngOnInit() {
-  }
 
   goBack(): void {
     this.location.back();
   }
-
 }
+
