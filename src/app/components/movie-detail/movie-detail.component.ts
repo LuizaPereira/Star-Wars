@@ -22,6 +22,7 @@ import { Subscription } from 'rxjs';
 })
 export class MovieDetailComponent implements OnInit, OnDestroy {
   movie: Movie;
+  movieId: number;
   charactersUrl: [];
   planetsUrl: [];
   speciesUrl: [];
@@ -33,6 +34,14 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   starships: Starship[] = [];
   vehicles: Vehicle[] = [];
   detailSubscription: Subscription;
+
+  public routes: any[] = [
+    { path: 'characters', title: 'Characters' },
+    { path: 'planets', title: 'Planets' },
+    { path: 'species', title: 'Species' },
+    { path: 'spaceships', title: 'Spaceships' },
+    { path: 'vehicles', title: 'Vehicles' }
+  ]
 
   constructor(
     private route: ActivatedRoute,
@@ -51,6 +60,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
 
   getMovie(): void {
     const id = +this.route.snapshot.paramMap.get('id');
+    this.movieId = id;
     this.detailSubscription = this._movies.getMovies().subscribe(
       (data: Movie) => {
         this.movie = data.results[id];

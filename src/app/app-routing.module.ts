@@ -11,14 +11,22 @@ import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'movies/:id', component: MovieDetailComponent },
   { path: 'characters', component: CharacterListComponent },
   { path: 'planets', component: PlanetsListComponent },
   { path: 'vehicles', component: VehiclesListComponent },
   { path: 'species', component: SpeciesListComponent },
   { path: 'spaceships', component: SpaceshipsListComponent },
-  { path: 'about', component: AboutComponent}
-];
+  { path: 'about', component: AboutComponent },
+  {
+    path: 'movies/:id', component: MovieDetailComponent,
+    children: [
+      { path: 'characters', component: CharacterListComponent },
+      { path: 'planets', component: PlanetsListComponent },
+      { path: 'vehicles', component: VehiclesListComponent },
+      { path: 'species', component: SpeciesListComponent },
+      { path: 'spaceships', component: SpaceshipsListComponent }
+    ]
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

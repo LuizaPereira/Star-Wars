@@ -20,7 +20,8 @@ export class InformationBoxComponent implements OnInit {
 
   ngOnInit() {
     const keys: string[] = Object.keys(this.object)
-      .filter(key => this.filterKeys(key))
+      .filter(key => this.filterKeys(key)
+      )
 
     this.informations = keys.map(key => ({
           title: key,

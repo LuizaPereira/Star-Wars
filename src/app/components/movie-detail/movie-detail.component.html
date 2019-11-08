@@ -11,7 +11,14 @@
       <span>{{movie.opening_crawl}}</span>
     </div>
 
-    <div *ngIf="characters" class="characters-block">
+    <ul>
+      <li *ngFor="let route of routes">
+        <a [routerLink]="route.path" [innerText]="route.title"></a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+
+    <!-- <div *ngIf="characters" class="characters-block">
       <h1>Characters</h1>
       <ul class="characters-list">
         <app-information-box class="characters-detail"
@@ -26,12 +33,13 @@
     <div *ngIf="planets" class="planets-block">
       <h1>Planets</h1>
       <ul class="planets-list">
-        <!-- <app-information-box class="planets-detail"
+
+        <app-information-box class="planets-detail"
           *ngFor="let planet of planets"
-          [object]="planets"
+          [object]="planet"
           [map-attributes]="['diameter','climate','population','terrain']"
           title-attribute="name"
-        ></app-information-box> -->
+        ></app-information-box>
 
         <li *ngFor="let planet of planets">
           <div class="planets-detail">
@@ -51,12 +59,7 @@
         <li *ngFor="let specie of species">
           <div class="species-detail">
             <h2>{{specie.name}}</h2>
-            <p>Classification : {{specie.classification}}</p>
-            <p>Designation : {{specie.designation}}</p>
-            <p>Language : {{specie.language}}</p>
-          </div>
-        </li>
-      </ul>
+            <p>Classification : {{speciLALALALA
     </div>
 
     <div *ngIf="starships" class="starships-block">
@@ -86,5 +89,5 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 </div>
