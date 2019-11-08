@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngIf="movie">
-    <a (click)="goBack()" class="cardinal-button"> GO BACK</a>
+    <a (click)="goHome()" class="cardinal-button"> GO HOME</a>
     <h1>Episode {{movie.episode_id}} : {{ movie.title }}</h1>
     <div class="sub-title">
       <p>Release Date: {{movie.release_date | date:'dd/MM/yyyy'}}</p>
@@ -11,8 +11,8 @@
       <span>{{movie.opening_crawl}}</span>
     </div>
 
-    <ul>
-      <li *ngFor="let route of routes">
+    <ul class="component-list">
+      <li *ngFor="let route of routes" class="component-item">
         <a [routerLink]="route.path" [innerText]="route.title"></a>
       </li>
     </ul>

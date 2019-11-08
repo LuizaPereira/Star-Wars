@@ -19,15 +19,23 @@
     margin: 20px 0px;
   }
 
-  .characters-block {
-    .characters-list {
-      @include block-disposal(flex, wrap, space-evenly);
+  .component-list {
+    @include block-disposal(flex, wrap, space-evenly);
 
-      .characters-detail {
-        @include block-detail(white, black, $yellow);
-      }
+    .component-item {
+      @include block-detail(white, black, $yellow);
     }
   }
+
+  // .characters-block {
+  //   .characters-list {
+  //     @include block-disposal(flex, wrap, space-evenly);
+
+  //     .characters-detail {
+  //       @include block-detail(white, black, $yellow);
+  //     }
+  //   }
+  // }
 
   .planets-block {
     h1 {

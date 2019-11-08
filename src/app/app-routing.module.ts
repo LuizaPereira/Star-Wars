@@ -10,7 +10,7 @@ import { SpaceshipsListComponent } from './components/spaceships-list/spaceships
 import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'characters', component: CharacterListComponent },
   { path: 'planets', component: PlanetsListComponent },
   { path: 'vehicles', component: VehiclesListComponent },

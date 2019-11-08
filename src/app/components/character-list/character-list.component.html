@@ -1,3 +1,13 @@
 <div class="container">
-<p>character-list works!</p>
+  <div *ngIf="characters" class="characters-block">
+    <h1>Characters</h1>
+    <ul class="characters-list">
+      <app-information-box class="characters-detail"
+        *ngFor="let character of characters"
+        [object]="character"
+        [map-attributes]="['gender','height','hair_color']"
+        title-attribute="name"
+      ></app-information-box>
+    </ul>
+  </div>
 </div>
