@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public routes: any[] = [
-    { path: '/home', title: 'Home' },
+    { path: '/', title: 'Home' },
     { path: '/characters', title: 'Characters' },
     { path: '/planets', title: 'Planets' },
     { path: '/species', title: 'Species' },

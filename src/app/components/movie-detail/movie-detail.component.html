@@ -11,14 +11,14 @@
       <span>{{movie.opening_crawl}}</span>
     </div>
 
-    <ul class="component-list">
+    <!-- <ul class="component-list">
       <li *ngFor="let route of routes" class="component-item">
         <a [routerLink]="route.path" [innerText]="route.title"></a>
       </li>
     </ul>
-    <router-outlet></router-outlet>
+    <router-outlet></router-outlet> -->
 
-    <!-- <div *ngIf="characters" class="characters-block">
+   <div *ngIf="characters" class="characters-block">
       <h1>Characters</h1>
       <ul class="characters-list">
         <app-information-box class="characters-detail"
@@ -33,33 +33,25 @@
     <div *ngIf="planets" class="planets-block">
       <h1>Planets</h1>
       <ul class="planets-list">
-
         <app-information-box class="planets-detail"
           *ngFor="let planet of planets"
           [object]="planet"
           [map-attributes]="['diameter','climate','population','terrain']"
           title-attribute="name"
         ></app-information-box>
-
-        <li *ngFor="let planet of planets">
-          <div class="planets-detail">
-            <h2>{{planet.name}}</h2>
-            <p>Diameter : {{planet.diameter}}</p>
-            <p>Climate : {{planet.climate}}</p>
-            <p>Population : {{planet.population}}</p>
-            <p>Terrain : {{planet.terrain}}</p>
-          </div>
-        </li>
       </ul>
     </div>
 
     <div *ngIf="species" class="species-block">
       <h1>Species</h1>
       <ul class="species-list">
-        <li *ngFor="let specie of species">
-          <div class="species-detail">
-            <h2>{{specie.name}}</h2>
-            <p>Classification : {{speciLALALALA
+        <app-information-box class="species-detail"
+          *ngFor="let specie of species"
+          [object]="specie"
+          [map-attributes]="['classification','designation','homeworld','language']"
+          title-attribute="name"
+        ></app-information-box>
+      </ul>
     </div>
 
     <div *ngIf="starships" class="starships-block">
@@ -89,5 +81,5 @@
         </li>
       </ul>
     </div>
-  </div> -->
+  </div>
 </div>

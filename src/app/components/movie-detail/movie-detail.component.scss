@@ -26,16 +26,16 @@
       @include block-detail(white, black, $yellow);
     }
   }
+  
+   .characters-block {
+     .characters-list {
+       @include block-disposal(flex, wrap, space-evenly);
 
-  // .characters-block {
-  //   .characters-list {
-  //     @include block-disposal(flex, wrap, space-evenly);
-
-  //     .characters-detail {
-  //       @include block-detail(white, black, $yellow);
-  //     }
-  //   }
-  // }
+       .characters-detail {
+         @include block-detail(white, black, $yellow);
+       }
+     }
+   }
 
   .planets-block {
     h1 {
