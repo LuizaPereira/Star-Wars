@@ -49,9 +49,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
     private _planets: PlanetsService,
     private _species: SpeciesService,
     private _starships: StarshipsService,
-    private _vehicles: VehiclesService,
-    private location: Location,
-    private router: Router) {
+    private _vehicles: VehiclesService,) {
   }
 
   ngOnInit() {
@@ -126,10 +124,6 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
          });
      });
    }
-
-  goHome(): void {
-    this.router.navigate(['']);
-  }
 
   ngOnDestroy() {
     this.detailSubscription.unsubscribe();

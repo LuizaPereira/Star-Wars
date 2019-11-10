@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngIf="movie">
-    <a (click)="goHome()" class="cardinal-button"> GO HOME</a>
+    <app-back-button> </app-back-button>
     <h1>Episode {{movie.episode_id}} : {{ movie.title }}</h1>
     <div class="sub-title">
       <p>Release Date: {{movie.release_date | date:'dd/MM/yyyy'}}</p>
@@ -77,6 +77,6 @@
         ></app-information-box>
       </ul>
     </div>
-    
+
   </div>
 </div>

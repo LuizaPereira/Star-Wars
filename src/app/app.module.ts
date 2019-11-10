@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InformationBoxComponent } from './components/information-box/information-box.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { InformationBoxComponent } from './components/information-box/informatio
     SpaceshipsListComponent,
     HomeComponent,
     AboutComponent,
-    InformationBoxComponent
+    InformationBoxComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,
