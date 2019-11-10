@@ -18,14 +18,6 @@
     padding: 0 60px;
     margin: 20px 0px;
   }
-
-  .component-list {
-    @include block-disposal(flex, wrap, space-evenly);
-
-    .component-item {
-      @include block-detail(white, black, $yellow);
-    }
-  }
   
    .characters-block {
      .characters-list {

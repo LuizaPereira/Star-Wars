@@ -57,29 +57,26 @@
     <div *ngIf="starships" class="starships-block">
       <h1>Starships</h1>
       <ul class="starships-list">
-        <li *ngFor="let starship of starships">
-          <div class="starships-detail">
-            <h2>{{starship.name}}</h2>
-            <p>Model : {{starship.model}}</p>
-            <p>Class : {{starship.starship_class}}</p>
-            <p>Value : {{starship.cost_in_credits}}</p>
-          </div>
-        </li>
+        <app-information-box class="starships-detail"
+          *ngFor="let starship of starships"
+          [object]="starship"
+          [map-attributes]="['model','starship_class','cost_in_credits']"
+          title-attribute="name"
+        ></app-information-box>
       </ul>
     </div>
 
     <div *ngIf="vehicles" class="vehicles-block">
       <h1>Vehicles</h1>
       <ul class="vehicles-list">
-        <li *ngFor="let vehicle of vehicles">
-          <div class="vehicles-detail">
-            <h2>{{vehicle.name}}</h2>
-            <p>Model : {{vehicle.model}}</p>
-            <p>Class : {{vehicle.vehicle_class}}</p>
-            <p>Value : {{vehicle.cost_in_credits}}</p>
-          </div>
-        </li>
+        <app-information-box class="vehicles-detail"
+          *ngFor="let vehicle of vehicles"
+          [object]="vehicle"
+          [map-attributes]="['model','vehicle_class','cost_in_credits']"
+          title-attribute="name"
+        ></app-information-box>
       </ul>
     </div>
+    
   </div>
 </div>
