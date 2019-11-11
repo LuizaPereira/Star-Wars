@@ -15,6 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InformationBoxComponent } from './components/information-box/information-box.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { LoadingBoxComponent } from './components/loading-box/loading-box.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     HomeComponent,
     AboutComponent,
     InformationBoxComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    LoadingBoxComponent
   ],
   imports: [
     BrowserModule,
