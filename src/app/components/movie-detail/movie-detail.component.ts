@@ -34,13 +34,13 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   vehicles: Vehicle[] = [];
   detailSubscription: Subscription;
 
-  public routes: any[] = [
-    { path: 'characters', title: 'Characters' },
-    { path: 'planets', title: 'Planets' },
-    { path: 'species', title: 'Species' },
-    { path: 'spaceships', title: 'Spaceships' },
-    { path: 'vehicles', title: 'Vehicles' }
-  ]
+  // public routes: any[] = [
+  //   { path: 'characters', title: 'Characters' },
+  //   { path: 'planets', title: 'Planets' },
+  //   { path: 'species', title: 'Species' },
+  //   { path: 'spaceships', title: 'Spaceships' },
+  //   { path: 'vehicles', title: 'Vehicles' }
+  // ]
 
   constructor(
     private route: ActivatedRoute,
