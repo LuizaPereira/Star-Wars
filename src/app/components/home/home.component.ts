@@ -19,10 +19,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.movieSubscription = this._http.getMovies().subscribe((data: Movie) => {
       this.movies = data.results;
       this.movies.map(data => {
-        this.titles.push(`Episode ${data.episode_id.toString()} : ${data.title} `);
+        this.titles.push(`Episode ${data.episode_id.toString()} : ${data.title}`);
       });
     });
-    console.log(this.titles);
   }
 
   ngOnDestroy() {

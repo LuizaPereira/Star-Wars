@@ -1,8 +1,11 @@
 <div class="container">
-    <input [(ngModel)]="searchText" placeholder="Search a Title">
+  <div class="search-bar">
+    <input [(ngModel)]="searchText" placeholder="Search a Title" />
+  </div>
+
   <ul>
-    <li *ngFor="let title of titles | filter: searchText; let i = index;">
-      <a routerLink="/movies/{{i}}">{{ title }}</a>
+    <li *ngFor="let title of titles | filter: searchText; let i = index">
+      <a routerLink="/movies/{{ i }}">{{ title }}</a>
     </li>
   </ul>
 </div>
