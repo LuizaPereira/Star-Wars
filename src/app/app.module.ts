@@ -6,11 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MovieDetailComponent } from './components/pages/movie-detail/movie-detail.component';
-import { CharacterListComponent } from './components/character-list/character-list.component';
-import { PlanetsListComponent } from './components/planets-list/planets-list.component';
-import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.component';
-import { SpeciesListComponent } from './components/species-list/species-list.component';
-import { SpaceshipsListComponent } from './components/spaceships-list/spaceships-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +14,7 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
 import { LoadingBoxComponent } from './components/loading-box/loading-box.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ErrorPageComponent } from './components/pages/error-page/error-page.component';
+import { BuildingPageComponent } from './components/pages/building-page/building-page.component';
 
 
 @NgModule({
@@ -26,18 +22,14 @@ import { ErrorPageComponent } from './components/pages/error-page/error-page.com
     AppComponent,
     HeaderComponent,
     MovieDetailComponent,
-    CharacterListComponent,
-    PlanetsListComponent,
-    VehiclesListComponent,
-    SpeciesListComponent,
-    SpaceshipsListComponent,
     HomeComponent,
     AboutComponent,
     InformationBoxComponent,
     BackButtonComponent,
     LoadingBoxComponent,
     FilterPipe,
-    ErrorPageComponent
+    ErrorPageComponent,
+    BuildingPageComponent
   ],
   imports: [
     BrowserModule,
