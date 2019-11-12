@@ -7,11 +7,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-
   constructor(private location: Location) { }
 
   goBack(): void {
     this.location.back();
   }
 }
-

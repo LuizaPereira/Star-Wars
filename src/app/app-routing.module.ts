@@ -17,16 +17,7 @@ const routes: Routes = [
   { path: 'species', component: SpeciesListComponent },
   { path: 'spaceships', component: SpaceshipsListComponent },
   { path: 'about', component: AboutComponent },
-  {
-    path: 'movies/:id', component: MovieDetailComponent,
-    children: [
-      { path: 'characters', component: CharacterListComponent },
-      { path: 'planets', component: PlanetsListComponent },
-      { path: 'vehicles', component: VehiclesListComponent },
-      { path: 'species', component: SpeciesListComponent },
-      { path: 'spaceships', component: SpaceshipsListComponent }
-    ]
-  }];
+  { path: 'movies/:id', component: MovieDetailComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

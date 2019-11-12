@@ -24,9 +24,9 @@ export class InformationBoxComponent implements OnInit {
       )
 
     this.informations = keys.map(key => ({
-          title: key,
-          description: this.object[key]
-      })
+      title: key,
+      description: this.object[key]
+    })
     )
   }
 

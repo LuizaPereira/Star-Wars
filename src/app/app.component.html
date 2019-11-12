@@ -1,2 +1,7 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<div [hidden]="!loading">
+  <app-loading-box></app-loading-box>
+</div>
+<div [hidden]="loading">
+  <router-outlet></router-outlet>
+</div>

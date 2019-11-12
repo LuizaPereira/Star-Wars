@@ -11,13 +11,6 @@
       <span>{{movie.opening_crawl}}</span>
     </div>
 
-    <!-- <ul class="component-list">
-      <li *ngFor="let route of routes" class="component-item">
-        <a [routerLink]="route.path" [innerText]="route.title"></a>
-      </li>
-    </ul>
-    <router-outlet></router-outlet> -->
-
    <div *ngIf="characters" class="characters-block">
       <h1>Characters</h1>
       <ul class="characters-list">
@@ -77,6 +70,5 @@
         ></app-information-box>
       </ul>
     </div>
-
   </div>
 </div>
