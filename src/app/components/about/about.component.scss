@@ -1,4 +1,5 @@
 @import "../../../scss/variables";
+@import "../../../scss/mixins.scss";
 
 .container {
   h1 {
@@ -28,6 +29,21 @@
           background: darken(black, 10%);
           color: $yellow;
           border-radius: 10px;
+        }
+      }
+    }
+
+    .footer-list {
+      @include block-disposal(flex, none, center);
+      align-items: center;
+      margin-top: 20px;
+
+      li {
+        margin: 0 20px;
+
+        img {
+          height: 40px;
+          width: 40px;
         }
       }
     }
