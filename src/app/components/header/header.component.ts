@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-
   public routes: any[] = [
-    { path: '/', title: 'Home' },
-    { path: '/characters', title: 'Characters' },
-    { path: '/planets', title: 'Planets' },
-    { path: '/species', title: 'Species' },
-    { path: '/spaceships', title: 'Spaceships' },
-    { path: '/vehicles', title: 'Vehicles' },
-    { path: '/about', title: 'About' }
-  ]
+    { path: "/", title: "Home" },
+    { path: "/characters", title: "Characters" },
+    { path: "/planets", title: "Planets" },
+    { path: "/species", title: "Species" },
+    { path: "/spaceships", title: "Spaceships" },
+    { path: "/vehicles", title: "Vehicles" },
+    { path: "/about", title: "About" }
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

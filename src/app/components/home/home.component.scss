@@ -4,20 +4,21 @@ body {
   background-size: auto;
 }
 
-li {
-  margin: 10px 0px 0px 10px;
+.container {
+  li {
+    margin: 10px 0px 0px 10px;
 
-  a {
+    a {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: white;
+      }
 
-    &:link,
-    &:visited {
-      text-decoration: none;
-      color: white;
-    }
-
-    &:hover {
-      text-decoration: underline;
-      color: $yellow;
+      &:hover {
+        text-decoration: underline;
+        color: $yellow;
+      }
     }
   }
 }

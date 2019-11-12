@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InformationBoxComponent } from './components/information-box/information-box.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { LoadingBoxComponent } from './components/loading-box/loading-box.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -32,12 +34,14 @@ import { LoadingBoxComponent } from './components/loading-box/loading-box.compon
     AboutComponent,
     InformationBoxComponent,
     BackButtonComponent,
-    LoadingBoxComponent
+    LoadingBoxComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
