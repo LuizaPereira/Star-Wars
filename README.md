@@ -1,5 +1,5 @@
 # StarWars
-
+My first project using Angular 8, and have the intention to level my skills.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
 
 ## Instalation
