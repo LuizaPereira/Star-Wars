@@ -1,4 +1,5 @@
 @import "../../../scss/variables";
+@import "../../../scss/mixins.scss";
 
 .title-bar {
   display: flex;
@@ -13,6 +14,7 @@
 
     @media (max-width: 700px) {
       font-size: 3rem;
+      margin: 10px 0px;
     }
   }
 
@@ -27,34 +29,47 @@
       padding: 0;
       list-style-type: none;
 
-      li a {
-        padding: 1em;
+      li {
+        a {
+          padding: 1em;
 
-        &:link,
-        &:visited {
-          text-decoration: none;
-          color: white;
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: white;
+          }
+
+          &:hover {
+            text-decoration: underline;
+            background: darken(black, 10%);
+            color: $yellow;
+            border-radius: 10px;
+          }
+
+          @media (max-width: 700px) {
+            padding: 0;
+
+            &:hover {
+              text-decoration: underline;
+              background: none;
+              color: $yellow;
+            }
+          }
         }
 
-        &:hover {
-          text-decoration: underline;
-          background: darken(black, 10%);
-          color: $yellow;
-          border-radius: 10px;
+        @media (max-width: 700px) {
+          margin: 10px;
         }
       }
 
       @media (max-width: 700px) {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
+        @include block-disposal(flex, wrap, center);
+        align-content: space-between;
       }
     }
 
     @media (max-width: 700px) {
-      border: solid 20px black;
-      background-color: black;
-      border-radius: 10px;
+      margin: 0px 30px;
     }
   }
 }
