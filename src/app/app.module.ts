@@ -18,6 +18,7 @@ import { InformationBoxComponent } from './components/information-box/informatio
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { LoadingBoxComponent } from './components/loading-box/loading-box.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     InformationBoxComponent,
     BackButtonComponent,
     LoadingBoxComponent,
-    FilterPipe
+    FilterPipe,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
