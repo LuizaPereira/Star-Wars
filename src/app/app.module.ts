@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MovieDetailComponent } from './components/pages/movie-detail/movie-detail.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InformationBoxComponent } from './components/information-box/information-box.component';

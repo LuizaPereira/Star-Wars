@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/pages/home/home.component';
 import { MovieDetailComponent } from './components/pages/movie-detail/movie-detail.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { ErrorPageComponent } from './components/pages/error-page/error-page.component';
